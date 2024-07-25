@@ -49,7 +49,8 @@ html {
 }
 
 body {
-    margin:0
+    margin:0;
+    /* height: 175vh; */
 }
 
 /*
@@ -57,10 +58,6 @@ main {
     display:block
 }
 */
-
-h1 {
-    font-size:2em
-}
 
 /*
 hr {
@@ -207,7 +204,7 @@ input[type="text"],input[type="email"],input[type="search"],input[type="password
     }
 }
 
-h1,h2,h3,h4,h5,h6 { padding-top: 0; margin-top: 0 }
+h1,h2,h3,h4,h5,h6 { padding: 0; margin: 0 auto; }
 html,body,div#root { position: relative; }
 body {
     background: white;
@@ -309,12 +306,12 @@ p { text-align: left; }
 /* Hero */
 .row.hero {
     border-bottom: 1px solid black;
-    margin-bottom: 2em;
 }
 
 @media (min-width: 40em) {
     .row.hero {
         min-height: 18em;
+        margin-bottom: 3em;
     }
 
     .row.hero .col.hero {
@@ -324,6 +321,7 @@ p { text-align: left; }
 @media (min-width: 52em) {
     .row.hero {
         min-height: 22em;
+        margin-bottom: 4em;
     }
 }
 
@@ -359,6 +357,18 @@ h1, ol, ul, li {
 
 /* Misc */
 
+h1 {
+    font-size:2em;
+    line-height: 1;
+    margin-bottom: 0.5em;
+}
+
+a.target {
+    display: inline-block;
+    height: 0;
+    width: 0;
+}
+
 p, li {
     line-height: 1.5;
 }
@@ -371,18 +381,38 @@ p.indent {
     margin-left: 1em;
 }
 
+h2 {
+    font-weight: bold;
+    font-size: 1.05em;
+    margin-bottom: 1.3em;
+}
+
 @media (min-width: 40em) {
-    p.heading {
+    h2 {
         text-align: center;
     }
-    col.career {
+    .col.career {
         width: 30%;
     }
-    col.expertise {
+    .col.expertise {
         width: 50%;
     }
 }
 
+@media (min-width: 40em) {
+    .col.title {
+        width: 30%;
+    }
+}
+
+
+#spacer {
+    font-size: 2em;
+    margin-top: 23em;
+    margin-bottom: 2em;
+    text-align: center;
+    color: #ccc;
+}
 
     </style>
   </head>
@@ -390,8 +420,8 @@ p.indent {
     <div class="container">
       <div class="row nav">
         <div class="col nav">
-          <a href="#">About</a>
-          <a href="#">Contact</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
         </div>
       </div>
     </div><!-- container -->
@@ -401,25 +431,22 @@ p.indent {
         <div class="container">
           <div class="row">
             <div class="col"></div>
-            <div class="col"></div>
-            <div class="col" style="text-align: right">
-              <div>
-                <h1>Tiitle Tiiitle</h1>
-                <p>Consultancy&nbsp;services.</p>
-                <p>Health.&nbsp;Technology.</p>
-              </div>
+            <div class="col title">
+              <h1>Austin Plunkett</h1>
+              <p>Health.&nbsp;Technology.</p>
+              <p>Consultancy&nbsp;services.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
+    <a class="target" name="about"></a>
+
     <div class="container">
       <div class="row">
         <div class="col">
-          <p class="heading">
-            <b>About me.</b>
-          </p>
+          <h2>About me</h2>
         </div>
         <div class="col career">
           <p>Career history:</p>
@@ -440,7 +467,17 @@ p.indent {
           <p class="indent">Qualitative research.</p>
         </div>
       </div>
+      <a class="target" name="contact"></a>
+      <div class="row">
+        <div class="col">
+          <h2>Contact me</h2>
+        </div>
+        <div class="col" style="width:80%">
+        </div>
+      </div>
     </div>
+
+    <div id="spacer">&#10086;</div>
 
   </body>
 </html>
