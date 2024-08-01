@@ -63,11 +63,13 @@ main {
 hr {
     box-sizing:content-box;height:0;overflow:visible
 }
+*/
 
 pre {
-    font-family:monospace,monospace;font-size:1em
+    font-family: monospace, monospace;
+    margin: 0 auto;
+    display: inline-block;
 }
-*/
 
 a {
     background-color:transparent
@@ -240,6 +242,9 @@ select {
 */
 
 /* Ungrid: https://chrisnager.github.io/ungrid/ */
+.col {
+    vertical-align: top;
+}
 @media (min-width: 40em) {
     .row { width: 100%; display: table; table-layout: fixed; }
     .col { display: table-cell; text-align: center; }
@@ -387,6 +392,10 @@ h2 {
     margin-bottom: 1.3em;
 }
 
+.col.google {
+    text-align: center;
+}
+
 @media (min-width: 40em) {
     h2 {
         text-align: center;
@@ -405,7 +414,33 @@ h2 {
     }
 }
 
+/* Contact/QR stuff. */
 
+@media (min-width: 40em) {
+    .col.disney {
+        width: 20%;
+        text-align: left;
+    }
+    .col.google {
+        width: 60%;
+    }
+}
+
+pre#signal,
+pre#telegram,
+pre#whatsapp {
+    font-size: 4px;
+    letter-spacing: 0;
+    line-height: 1;
+    visibility: hidden;
+    display: none;
+}
+
+pre#signal,
+pre#telegram { color: #003; }
+pre#whatsapp { color: #030; }
+
+/* Spacer at end. */
 #spacer {
     font-size: 2em;
     margin-top: 23em;
@@ -445,8 +480,7 @@ h2 {
       <div class="row">
         <div class="col">
           <h2>How I can help you</h2>
-          <p>Nam a sapien.&nbsp;Nullam eu ante vel est convallis dignissim.&nbsp;Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.&nbsp;Nunc porta vulputate tellus.&nbsp;Nunc rutrum turpis sed pede.&nbsp;Sed bibendum.&nbsp;Aliquam posuere.&nbsp;Nunc aliquet, augue nec adipiscing interdum, lacus tellus malesuada massa, quis varius mi purus non odio.&nbsp;Pellentesque condimentum, magna ut suscipit hendrerit, ipsum augue ornare nulla, non luctus diam neque sit amet urna.&nbsp;Curabitur vulputate vestibulum lorem.&nbsp;Fusce sagittis, libero non molestie mollis, magna orci ultrices dolor, at vulputate neque nulla lacinia eros.&nbsp;Sed id ligula quis est convallis tempor.&nbsp;Curabitur lacinia pulvinar nibh.&nbsp;Nam a sapien.</p>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&nbsp;Donec hendrerit tempor tellus.&nbsp;Donec pretium posuere tellus.&nbsp;Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.&nbsp;Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.&nbsp;Nulla posuere.&nbsp;Donec vitae dolor.&nbsp;Nullam tristique diam non turpis.&nbsp;Cras placerat accumsan nulla.&nbsp;Nullam rutrum.&nbsp;Nam vestibulum accumsan nisl.</p>
+          <div style="display: block; height: 6em !important;"></div>
         </div>
       </div>
     </div>
@@ -478,13 +512,97 @@ h2 {
         </div>
       </div>
       <a class="target" name="contact"></a>
+
       <div class="row">
         <div class="col">
           <h2>Contact me</h2>
         </div>
-        <div class="col" style="width:80%">
+        <div class="col disney">
+          <script>
+            const disney = function(e) {
+                document.getElementById("signal").style.visibility = "hidden";
+                document.getElementById("signal").style.display = "none";
+                document.getElementById("telegram").style.visibility = "hidden";
+                document.getElementById("telegram").style.display = "none";
+                document.getElementById("whatsapp").style.visibility = "hidden";
+                document.getElementById("whatsapp").style.display = "none";
+                if (e.value != "0") {
+                    document.getElementById(e.value).style.visibility = "visible";
+                    document.getElementById(e.value).style.display = "inline-block";
+                }
+            }
+          </script>
+          <select onchange="disney(this)">
+            <option value=0>Choose...</option>
+            <option value=signal>Signal</option>
+            <option value=telegram>Telegram</option>
+            <option value=whatsapp>WhatsApp</option>
+          </select>
         </div>
-      </div>
+        <div class="col google">
+<pre id="signal">█████████████████████████████████████████████████
+█████████████████████████████████████████████████
+████ ▄▄▄▄▄ █▀▀▄ ▀  █▄▄ █▀▀ ▄█▄▄█▀▀▄▄██ ▄▄▄▄▄ ████
+████ █   █ █ ▀▄█ ▀▀███▀▀████ █ ▀ ▄▄▄██ █   █ ████
+████ █▄▄▄█ ██▄ ▀▀██▄ ▀▀▄█ █▄▄▄ ▄ ▀ ▄██ █▄▄▄█ ████
+████▄▄▄▄▄▄▄█ ▀▄█ █▄▀▄█▄█▄█ ▀▄█▄█ █▄▀▄█▄▄▄▄▄▄▄████
+████ ▀▀▀▀▀▄█▄█▀ ▀▀▀▀▄ ▄▄▄▀    ▀▀█▄▀ ▄▄ ▀▀▄▄ █████
+████▀▀▀▀█▄▄▀  ▄█▀▀▄▄██ █▄▄ ▀█▄▀▄▄██▀ ▄▄▀█▀█ ▀████
+████▀█ ▄▀█▄ ▄ ▄ ▀▄▀▄  ▀▄ ▄▀█▀▀▀▄  ▀███▄▀▀██▄▀████
+█████▀▄ ▄ ▄▀▄█▀█ ██▄▄▄█ ██▀█▀▄ ▀█▄▄█  █▄▄  ▀█████
+████ ▄▀ ▀ ▄ ▄ ▄▄▀▄▀ █▀▀ ▄▄▄█▄  █ ▄▄▀▀ ▀ ▀▀▀  ████
+████▄▀▄ █▀▄▄▀█ ▄ ▄ ▄█▀▀ ▄▄  ▀▀█▄▀▄▄▄ ▄▄▄  █ ▄████
+█████▄▀█ █▄██▀ ▄▄ █▀ █▀ ▄▄███▀  █▀▄▄█▀▀▀ ▀ ██████
+████▀   ▀ ▄▄▀▀█▄ █▀  ▄ █▄▄ ▀▀▄▄▄▀█▄▀█▀▄▄▀ ▄█▀████
+████▀ ▄▄▄▄▄ ▀█▀▄ ▄▄▀▄▄█▀ ▀▀▀ ██  █▀ ▄▀▄ ▀ ██ ████
+█████ ▀▄ ▄▄▀▀▀ █ ▄██▄█▄▀▄▄████▄ █▄▄▀▄▀█▄▀▀▀█▀████
+████ █ █▄█▄█ ▀▄▄█ ▄ █▀▀▄▄▀▀█▄ ▀█▄▄▄▄▀▄█▄▀  ██████
+████ ▄ ███▄ ██ ▄▀█▄▀ █▄▄███▀▄█▄▄█▄▄▀ ▄▀ ▀▀██ ████
+████▄█▄█▄▄▄█▀▀ ▀▄ ██▄█▀██   ▀█ ▄▄ █▄ ▄▄▄ ▀█▀▄████
+████ ▄▄▄▄▄ ██▀▀ █▄▀▀ █▄█▄▀▄█▀█▀▄▄ ▀▀ █▄█  █▄█████
+████ █   █ ██ ▀█ ▄██▀▄▄▀ ▄█▄▄   ▀▄▀ ▄▄▄ ▄ █ █████
+████ █▄▄▄█ ██ █ █▄▄ ▀▄▀█▀▄▄███▄▄▀▄█ █  ▄  ▀█▀████
+████▄▄▄▄▄▄▄█▄▄▄█▄██▄▄█▄█████▄▄▄▄█▄█████▄▄▄███████
+█████████████████████████████████████████████████
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</pre>
+<pre id="telegram">█████████████████████████████████████
+█████████████████████████████████████
+████ ▄▄▄▄▄ ██▀█ ▀█▄█▀▄ ▄▀█ ▄▄▄▄▄ ████
+████ █   █ ██▄█▀▄▀▄▄▀▄ ▀ █ █   █ ████
+████ █▄▄▄█ █▀▄  ███▀▀ ▄▀▀█ █▄▄▄█ ████
+████▄▄▄▄▄▄▄█▄▀ █ ▀▄▀ ▀ █ █▄▄▄▄▄▄▄████
+████ ██▄▀ ▄▀ ▀▀ ▄▀▄▀ ▀█▄▀ ▀ █▀██▀████
+████▄▄█▄▀ ▄█▄▀    ▄▄▀█▀  ▄  ▄▄  █████
+████   ▄ █▄█▀▄▀ █▀  ▀ ▀▀▀ ▄██▄█▄▄████
+████ ██▄▄▄▄▄ █▀█▀▄▄▀█ ██▀█▄█  ▄ ▄████
+████▄▄▀ ▀ ▄ ██ ▄▀ ▀▀▀▄▀█▄▄▀▀█▀█▄▀████
+████▄█▄█ ▄▄▀█ ▄▀▄█ ▄▄▀███▄ █▀██  ████
+████▄█▄▄▄█▄▄▀█ ▀▄█▀ █▄▄  ▄▄▄ █ ▀▀████
+████ ▄▄▄▄▄ █▀▀ ▄ █▀▀▄ ██ █▄█ ▀▀▄▀████
+████ █   █ █▀█   ▀█▀▄▀██▄▄   ▀▀█▀████
+████ █▄▄▄█ ██▄▄ ▀▀█▄   ▄▀ █ ▄▄▄▀▄████
+████▄▄▄▄▄▄▄█▄▄▄█▄█▄▄▄█▄█▄▄▄▄▄██▄█████
+█████████████████████████████████████</pre>
+<pre id="whatsapp">█████████████████████████████████
+█████████████████████████████████
+████ ▄▄▄▄▄ ██▄█ ▀▀ ▀▀█ ▄▄▄▄▄ ████
+████ █   █ █ █▄▄█▀▄▀ █ █   █ ████
+████ █▄▄▄█ █ ▄▀█ ▀ ▀██ █▄▄▄█ ████
+████▄▄▄▄▄▄▄█ █▄▀▄█ ▀ █▄▄▄▄▄▄▄████
+████ ▀▄   ▄▀▀  ▀█ ▀▄▄█▄ ▄▄▄▀█████
+█████▀▀██▀▄▄ █▄▀▄█▀ ▀▀  ▄▄█▄ ████
+████  █ ██▄███ █ ▄▀▄▄█▄ ▄▀▄ ▄████
+████ █▄ ▀▀▄▀▀  ▀ ▄▄▄ ▄█  ▄█▄ ████
+████▄█▄██▄▄█ █▀▀▀▄▀▀ ▄▄▄ ▀▄██████
+████ ▄▄▄▄▄ █▀▀██▀▄█▀ █▄█ ▀▄▄▄████
+████ █   █ █  ▀ ▀▄▀▄▄  ▄ ▀ ▀▀████
+████ █▄▄▄█ █▄  █▄█ ▀▀▀█▀▀ ▄█ ████
+████▄▄▄▄▄▄▄█▄▄███▄███▄▄▄▄▄▄▄▄████
+█████████████████████████████████
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</pre>
+        </div>
+      </div><!-- row -->
+
     </div>
 
     <div id="spacer">&#10086;</div>
