@@ -8,16 +8,14 @@
 
     <!-- Automatic polyfills for many features/browsers -->
     <script>
-      if (navigator) {
-          if (navigator.onLine) {
-              if ((((window || {}).location || {}).href || {}).startsWith("http")) {
-                  var p = document.createElement('script');
-                  p.src = "//cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0&features=default";
-                  p.async = true;
-                  p.defer = true;
-                  p.setAttribute('crossorigin','anonymous')
-                  document.head.appendChild(p);
-              }
+      if ((navigator || {}).onLine) {
+          if ((((window || {}).location || {}).href || {}).startsWith("http")) {
+              var p = document.createElement('script');
+              p.src = "//cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0&features=default";
+              p.async = true;
+              p.defer = true;
+              p.setAttribute('crossorigin','anonymous')
+              document.head.appendChild(p);
           }
       }
     </script>
@@ -42,7 +40,7 @@ h1, h2, p, ul[class], ol[class], li, {
 
 /* Normalize */
 
-/* [type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText};outline-offset:-2px;h1{margin:.67em 0} */
+/* [type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText;outline-offset:-2px}h1{margin:.67em 0} */
 html {
     line-height:1.15;
     -webkit-text-size-adjust:100%
@@ -67,8 +65,6 @@ hr {
 
 pre {
     font-family: monospace, monospace;
-    margin: 0 auto;
-    display: inline-block;
 }
 
 a {
@@ -323,6 +319,8 @@ p { text-align: left; }
         vertical-align: middle;
     }
 }
+
+/*
 @media (min-width: 52em) {
     .row.hero {
         min-height: 22em;
@@ -335,10 +333,7 @@ p { text-align: left; }
         min-height: 27em;
     }
 }
-
-.row.hero {
-    /* background: #eee; */
-}
+*/
 
 h1, ol, ul, li {
     margin-top: 0;
@@ -426,19 +421,20 @@ h2 {
     }
 }
 
-pre#signal,
-pre#telegram,
-pre#whatsapp {
-    font-size: 4px;
-    letter-spacing: 0;
-    line-height: 1;
+#signal,
+#telegram,
+#whatsapp {
     visibility: hidden;
     display: none;
 }
 
-pre#signal,
-pre#telegram { color: #003; }
-pre#whatsapp { color: #030; }
+#signal,
+#telegram,
+#telegram a { color: #003; }
+#whatsapp,
+#whatsapp a { color: #030; }
+
+#whatsapp img { margin: 2em }
 
 /* Spacer at end. */
 #spacer {
@@ -476,6 +472,7 @@ pre#whatsapp { color: #030; }
       </div>
     </div>
 
+    <!--
     <div class="container">
       <div class="row">
         <div class="col">
@@ -484,6 +481,7 @@ pre#whatsapp { color: #030; }
         </div>
       </div>
     </div>
+    -->
 
     <a class="target" name="about"></a>
 
@@ -495,9 +493,10 @@ pre#whatsapp { color: #030; }
         <div class="col career">
           <p>Career history:</p>
           <ul>
-            <li>Developer</li>
+            <li>Software developer</li>
             <li>Management consultant</li>
             <li>Osteopath</li>
+            <li>Business founder</li>
             <li>Research assistant</li>
             <li>Non-executive director</li>
             <li>PhD candidate</li>
@@ -507,7 +506,7 @@ pre#whatsapp { color: #030; }
         <div class="col expertise">
           <p>Expertise:</p>
           <p class="indent">Strategic analysis in public, private, and charity sectors.</p>
-          <p class="indent">Integrating technology into allied health and musculoskeletal care.</p>
+          <p class="indent">Integrating technology into healthcare, with expertise in allied health and musculoskeletal care.</p>
           <p class="indent">Qualitative research.</p>
         </div>
       </div>
@@ -534,72 +533,17 @@ pre#whatsapp { color: #030; }
           </script>
           <select onchange="disney(this)">
             <option value=0>Choose...</option>
-            <option value=signal>Signal</option>
+            <option value=signal>Signal (preferred)</option>
             <option value=telegram>Telegram</option>
             <option value=whatsapp>WhatsApp</option>
           </select>
         </div>
         <div class="col google">
-<pre id="signal">█████████████████████████████████████████████████
-█████████████████████████████████████████████████
-████ ▄▄▄▄▄ █▀▀▄ ▀  █▄▄ █▀▀ ▄█▄▄█▀▀▄▄██ ▄▄▄▄▄ ████
-████ █   █ █ ▀▄█ ▀▀███▀▀████ █ ▀ ▄▄▄██ █   █ ████
-████ █▄▄▄█ ██▄ ▀▀██▄ ▀▀▄█ █▄▄▄ ▄ ▀ ▄██ █▄▄▄█ ████
-████▄▄▄▄▄▄▄█ ▀▄█ █▄▀▄█▄█▄█ ▀▄█▄█ █▄▀▄█▄▄▄▄▄▄▄████
-████ ▀▀▀▀▀▄█▄█▀ ▀▀▀▀▄ ▄▄▄▀    ▀▀█▄▀ ▄▄ ▀▀▄▄ █████
-████▀▀▀▀█▄▄▀  ▄█▀▀▄▄██ █▄▄ ▀█▄▀▄▄██▀ ▄▄▀█▀█ ▀████
-████▀█ ▄▀█▄ ▄ ▄ ▀▄▀▄  ▀▄ ▄▀█▀▀▀▄  ▀███▄▀▀██▄▀████
-█████▀▄ ▄ ▄▀▄█▀█ ██▄▄▄█ ██▀█▀▄ ▀█▄▄█  █▄▄  ▀█████
-████ ▄▀ ▀ ▄ ▄ ▄▄▀▄▀ █▀▀ ▄▄▄█▄  █ ▄▄▀▀ ▀ ▀▀▀  ████
-████▄▀▄ █▀▄▄▀█ ▄ ▄ ▄█▀▀ ▄▄  ▀▀█▄▀▄▄▄ ▄▄▄  █ ▄████
-█████▄▀█ █▄██▀ ▄▄ █▀ █▀ ▄▄███▀  █▀▄▄█▀▀▀ ▀ ██████
-████▀   ▀ ▄▄▀▀█▄ █▀  ▄ █▄▄ ▀▀▄▄▄▀█▄▀█▀▄▄▀ ▄█▀████
-████▀ ▄▄▄▄▄ ▀█▀▄ ▄▄▀▄▄█▀ ▀▀▀ ██  █▀ ▄▀▄ ▀ ██ ████
-█████ ▀▄ ▄▄▀▀▀ █ ▄██▄█▄▀▄▄████▄ █▄▄▀▄▀█▄▀▀▀█▀████
-████ █ █▄█▄█ ▀▄▄█ ▄ █▀▀▄▄▀▀█▄ ▀█▄▄▄▄▀▄█▄▀  ██████
-████ ▄ ███▄ ██ ▄▀█▄▀ █▄▄███▀▄█▄▄█▄▄▀ ▄▀ ▀▀██ ████
-████▄█▄█▄▄▄█▀▀ ▀▄ ██▄█▀██   ▀█ ▄▄ █▄ ▄▄▄ ▀█▀▄████
-████ ▄▄▄▄▄ ██▀▀ █▄▀▀ █▄█▄▀▄█▀█▀▄▄ ▀▀ █▄█  █▄█████
-████ █   █ ██ ▀█ ▄██▀▄▄▀ ▄█▄▄   ▀▄▀ ▄▄▄ ▄ █ █████
-████ █▄▄▄█ ██ █ █▄▄ ▀▄▀█▀▄▄███▄▄▀▄█ █  ▄  ▀█▀████
-████▄▄▄▄▄▄▄█▄▄▄█▄██▄▄█▄█████▄▄▄▄█▄█████▄▄▄███████
-█████████████████████████████████████████████████
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</pre>
-<pre id="telegram">█████████████████████████████████████
-█████████████████████████████████████
-████ ▄▄▄▄▄ ██▀█ ▀█▄█▀▄ ▄▀█ ▄▄▄▄▄ ████
-████ █   █ ██▄█▀▄▀▄▄▀▄ ▀ █ █   █ ████
-████ █▄▄▄█ █▀▄  ███▀▀ ▄▀▀█ █▄▄▄█ ████
-████▄▄▄▄▄▄▄█▄▀ █ ▀▄▀ ▀ █ █▄▄▄▄▄▄▄████
-████ ██▄▀ ▄▀ ▀▀ ▄▀▄▀ ▀█▄▀ ▀ █▀██▀████
-████▄▄█▄▀ ▄█▄▀    ▄▄▀█▀  ▄  ▄▄  █████
-████   ▄ █▄█▀▄▀ █▀  ▀ ▀▀▀ ▄██▄█▄▄████
-████ ██▄▄▄▄▄ █▀█▀▄▄▀█ ██▀█▄█  ▄ ▄████
-████▄▄▀ ▀ ▄ ██ ▄▀ ▀▀▀▄▀█▄▄▀▀█▀█▄▀████
-████▄█▄█ ▄▄▀█ ▄▀▄█ ▄▄▀███▄ █▀██  ████
-████▄█▄▄▄█▄▄▀█ ▀▄█▀ █▄▄  ▄▄▄ █ ▀▀████
-████ ▄▄▄▄▄ █▀▀ ▄ █▀▀▄ ██ █▄█ ▀▀▄▀████
-████ █   █ █▀█   ▀█▀▄▀██▄▄   ▀▀█▀████
-████ █▄▄▄█ ██▄▄ ▀▀█▄   ▄▀ █ ▄▄▄▀▄████
-████▄▄▄▄▄▄▄█▄▄▄█▄█▄▄▄█▄█▄▄▄▄▄██▄█████
-█████████████████████████████████████</pre>
-<pre id="whatsapp">█████████████████████████████████
-█████████████████████████████████
-████ ▄▄▄▄▄ ██▄█ ▀▀ ▀▀█ ▄▄▄▄▄ ████
-████ █   █ █ █▄▄█▀▄▀ █ █   █ ████
-████ █▄▄▄█ █ ▄▀█ ▀ ▀██ █▄▄▄█ ████
-████▄▄▄▄▄▄▄█ █▄▀▄█ ▀ █▄▄▄▄▄▄▄████
-████ ▀▄   ▄▀▀  ▀█ ▀▄▄█▄ ▄▄▄▀█████
-█████▀▀██▀▄▄ █▄▀▄█▀ ▀▀  ▄▄█▄ ████
-████  █ ██▄███ █ ▄▀▄▄█▄ ▄▀▄ ▄████
-████ █▄ ▀▀▄▀▀  ▀ ▄▄▄ ▄█  ▄█▄ ████
-████▄█▄██▄▄█ █▀▀▀▄▀▀ ▄▄▄ ▀▄██████
-████ ▄▄▄▄▄ █▀▀██▀▄█▀ █▄█ ▀▄▄▄████
-████ █   █ █  ▀ ▀▄▀▄▄  ▄ ▀ ▀▀████
-████ █▄▄▄█ █▄  █▄█ ▀▀▀█▀▀ ▄█ ████
-████▄▄▄▄▄▄▄█▄▄███▄███▄▄▄▄▄▄▄▄████
-█████████████████████████████████
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</pre>
+          <div id="signal">Signal</div>
+          <div id="telegram">Telegram</div>
+          <div id="whatsapp">
+            <a href="https://whatsapp.com/channel/0029Vb3TK8aFcow0VQiQNf0t">https://whatsapp.com/channel/0029Vb3TK8aFcow0VQiQNf0t<br><img src="whatsapp.png"></a>
+          </div>
         </div>
       </div><!-- row -->
 
