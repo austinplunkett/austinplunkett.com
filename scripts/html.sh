@@ -15,4 +15,4 @@ while read f ; do
         a="${d}"/$(basename "${f}")
         minify --type html --html-keep-document-tags --html-keep-end-tags "${a}" > "${b}"
     fi
-done < <(find "${wd}" -name index-raw.html)
+done < <(find "${wd}" -name index.raw.html)
