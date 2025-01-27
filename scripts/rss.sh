@@ -2,11 +2,22 @@
 
 # Kudos: https://recursewithless.net/projects/pandoc-feeds.html
 
+set -euo pipefail
+
+this_dir=$(readlink -qe "$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )")
+wd=$(readlink -qe "${this_dir}"/../)
+
+cd "${wd}"
+
 pandoc \
-    -M updated="$(date '+%a, %d %b %Y')" \
-    -M title=' ' \
-    --metadata-file=blog.yaml \
+    -M updated="$(date '+%Y-%m-%d')" \
+    -M title='Austin Plunkett' \
+    --metadata-file=feed.yaml \
     --template=templates/rss.xml \
+    --wrap=none \
     -t html \
-    -o rss.xml \
-    < /dev/null
+    < /dev/null \
+    | sed -re 's/^\s+//g' \
+    | grep -v '^$' \
+    | tr -d $'\n' \
+         > rss.xml

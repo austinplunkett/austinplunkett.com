@@ -1,11 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title> </title>
-    <description></description>
-    <link>https://austinplunkett.com/</link>
-    <atom:link href="https://austinplunkett.com/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sat, 25 Jan 2025</lastBuildDate>
-
-      </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" ?><rss version="2.0"><channel><title> </title><description>Austin Plunkett. Health. Technology. Consultancy services.</description><link>https://austinplunkett.com/</link><!-- atom:link href="https://austinplunkett.com/rss.xml" rel="self" type="application/rss+xml" / --><lastBuildDate>2025-01-27</lastBuildDate><item><title></title><description>The UK Government must explain how it will handle the societal, ecological, educational, and industrial implications of its plans to roll-out AI.</description><link>https://austinplunkett.com/ai-nhs-long-term-impact/</link><pubDate>2025-01-28</pubDate><!-- guid>https://austinplunkett.com/ai-nhs-long-term-impact/@2025-01-28</guid --></item></channel></rss>
