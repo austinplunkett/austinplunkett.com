@@ -10,7 +10,9 @@ cd "${wd}"
 while read f ; do
     echo "${f}"
     d=$(dirname "${f}")
-    f="${d}"/$(basename "${f}")
-    t="${d}"/index.html
-    minify "${f}" > "${t}"
+    b="${d}"/index.html
+    if [[ ! -r "${b}" ]] ; then
+        a="${d}"/$(basename "${f}")
+        minify --type html --html-keep-document-tags --html-keep-end-tags "${a}" > "${b}"
+    fi
 done < <(find "${wd}" -name index-raw.html)
