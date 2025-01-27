@@ -190,8 +190,7 @@ input[type="text"],input[type="email"],input[type="search"],input[type="password
 }
 
 
-
-
+/* ================================================================================ */
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
     * {
@@ -201,6 +200,8 @@ input[type="text"],input[type="email"],input[type="search"],input[type="password
         scroll-behavior: auto !important;
     }
 }
+
+/* ================================================================================ */
 
 h1,h2,h3,h4,h5,h6 { padding: 0; margin: 0 auto; }
 html,body,div#root { position: relative; }
@@ -237,11 +238,12 @@ select {
 }
 */
 
+/* ================================================================================ */
 /* Ungrid: https://chrisnager.github.io/ungrid/ */
 .col {
     vertical-align: top;
 }
-@media (min-width: 40em) {
+@media only screen and (min-width: 40em) {
     .row { width: 100%; display: table; table-layout: fixed; }
     .col { display: table-cell; text-align: center; }
 }
@@ -254,30 +256,31 @@ p { text-align: left; }
     max-width: 100%;
 }
 
-@media only screen and (min-width:52em){
+@media only screen and (min-width: 52em){
     .container {
         width: 50em;
     }
 }
 
-@media only screen and (min-width:64em){
+@media only screen and (min-width: 64em){
     .container {
         width: 59em;
     }
 }
 
-@media only screen and (min-width:80em){
+@media only screen and (min-width: 80em){
     .container {
         width: 64em;
     }
 }
 
-@media only screen and (min-width:100em){
+@media only screen and (min-width: 100em){
     .container {
         width: 80em;
     }
 }
 
+/* ================================================================================ */
 /* Navigation. */
 
 .col.nav {
@@ -300,19 +303,20 @@ p { text-align: left; }
     background: red;
 }
 
-@media (min-width: 40em) {
+@media only screen and (min-width: 40em) {
     .col.nav a {
         padding: 0.8em 1.3em;
         margin: 1em 0 1em 1em;
     }
 }
 
+/* ================================================================================ */
 /* Hero */
 .row.hero {
     border-bottom: 1px solid black;
 }
 
-@media (min-width: 40em) {
+@media only screen and (min-width: 40em) {
     .row.hero {
         min-height: 18em;
         margin-bottom: 3em;
@@ -343,6 +347,7 @@ h1, ol, ul, li {
     text-align: left;
 }
 
+/* ================================================================================ */
 /* Light/dark themes. */
 @media (prefers-color-scheme: dark) {
     body {
@@ -358,6 +363,7 @@ h1, ol, ul, li {
     }
 }
 
+/* ================================================================================ */
 /* Misc */
 
 h1 {
@@ -390,11 +396,11 @@ h2 {
     margin-bottom: 1.3em;
 }
 
-.col.google {
+.col.qr {
     text-align: center;
 }
 
-@media (min-width: 40em) {
+@media only screen and (min-width: 40em) {
     h2 {
         text-align: center;
     }
@@ -407,25 +413,58 @@ h2 {
     }
 }
 
-@media (min-width: 40em) {
+@media only screen and (min-width: 40em) {
     .title {
         margin-left: 10%;
     }
 }
 
+/* ================================================================================ */
 /* Contact/QR stuff. */
 
-@media (min-width: 40em) {
+#signal img, #telegram img, #whatsapp img {
+    visibility: hidden;
+    display: none;
+}
+
+@media only screen and (min-width: 40em) {
     .col.disney {
         width: 20%;
         text-align: left;
     }
-    .col.google {
+    .col.qr {
         width: 60%;
+    }
+    #signal img, #telegram img, #whatsapp img {
+        visibility: visible;
+        display: inline-block;
+        height: 50%;
+        width: 50%;
     }
 }
 
+/*
+@media (min-width: 64em) {
+    #signal img, #telegram img, #whatsapp img {
+        height: 40%;
+        width: 40%;
+    }
+}
+
+@media (min-width: 52em) {
+    #signal img, #telegram img, #whatsapp img {
+        height: 30%;
+        width: 30%;
+    }
+}
+*/
+
 #signal,
+#telegram,
+#whatsapp {
+    line-height: 1.3;
+}
+
 #telegram,
 #whatsapp {
     visibility: hidden;
@@ -433,24 +472,38 @@ h2 {
 }
 
 #signal,
+#signal a,
 #telegram,
-#telegram a { color: #003; }
+#telegram a { color: #009; }
+
 #whatsapp,
 #whatsapp a { color: #030; }
 
+/* ================================================================================ */
 /* Spacer at end. */
-#spacer, #spacer-top {
-    font-size: 2em;
-    color: #ccc;
-    text-align: center;
-}
 #spacer {
-    margin-top: 23em;
-    margin-bottom: 2em;
+    margin-bottom: 4em;
 }
-#spacer-top::before,
-#spacer::after {
-    content: "❦"
+
+@media only screen and (min-width: 40em) {
+    #spacer, #spacer-top {
+        font-size: 2em;
+        color: #ccc;
+        text-align: center;
+    }
+    #spacer-top {
+        border-top: 1px solid black;
+        margin-top: 2em;
+        padding-top: 2em;
+    }
+    #spacer {
+        margin-top: 23em;
+        margin-bottom: 2em;
+    }
+    #spacer-top::before,
+    #spacer::after {
+        content: "❦"
+    }
 }
 
     </style>
@@ -494,7 +547,7 @@ h2 {
     <div class="container">
       <div class="row">
         <div class="col">
-          <h2>About me?</h2>
+          <h2>About me</h2>
         </div>
         <div class="col expertise">
           <p>Expertise:</p>
@@ -532,24 +585,24 @@ h2 {
                 document.getElementById("telegram").style.display = "none";
                 document.getElementById("whatsapp").style.visibility = "hidden";
                 document.getElementById("whatsapp").style.display = "none";
-                if (e.value != "0") {
-                    document.getElementById(e.value).style.visibility = "visible";
-                    document.getElementById(e.value).style.display = "inline-block";
-                }
+
+                document.getElementById(e.value).style.visibility = "visible";
+                document.getElementById(e.value).style.display = "inline-block";
             }
           </script>
           <select onchange="disney(this)">
-            <option value=0>Choose...</option>
-            <option value=signal>Signal (preferred)</option>
-            <option value=telegram>Telegram</option>
-            <option value=whatsapp>WhatsApp</option>
+            <option selected value="signal">Signal (preferred)</option>
+            <option value="telegram">Telegram</option>
+            <option value="whatsapp">WhatsApp</option>
           </select>
         </div>
-        <div class="col google">
-          <div id="signal">Signal</div>
+        <div class="col qr">
+          <div id="signal">
+            <a href="https://signal.group/#CjQKIOcy3Og0HsvhqZNRvL36HgDwJsf_5QRf5HAy1tRuh5jiEhBAId3uFPJtQrblESNuutbu"><img src="signal.png" alt="https://signal.group/#CjQKIOcy3Og0HsvhqZNRvL36HgDwJsf_5QRf5HAy1tRuh5jiEhBAId3uFPJtQrblESNuutbu"><br>https://signal.group/<br>#CjQKIOcy3Og0HsvhqZNRvL36HgDwJsf_<br>5QRf5HAy1tRuh5jiEhBAId3uFPJtQrblESNuutbu</a>
+          </div>
           <div id="telegram">Telegram</div>
           <div id="whatsapp">
-            <a href="https://whatsapp.com/channel/0029Vb3TK8aFcow0VQiQNf0t">https://whatsapp.com/channel/0029Vb3TK8aFcow0VQiQNf0t<br><img src="whatsapp.png" alt="https://whatsapp.com/channel/0029Vb3TK8aFcow0VQiQNf0t"></a>
+            <a href="https://whatsapp.com/channel/0029Vb3TK8aFcow0VQiQNf0t"><img src="whatsapp.png" alt="https://whatsapp.com/channel/0029Vb3TK8aFcow0VQiQNf0t"><br>https://whatsapp.com/channel/0029Vb3TK8aFcow0VQiQNf0t</a>
           </div>
         </div>
       </div><!-- row -->
