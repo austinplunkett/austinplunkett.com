@@ -280,7 +280,10 @@ p { text-align: left; }
 
 /* Navigation. */
 
-.col.nav { text-align: right; }
+.col.nav {
+    text-align: right;
+    padding: 0 0 1em 0;
+}
 
 .col.nav a {
     color: white;
@@ -395,13 +398,12 @@ h2 {
     h2 {
         text-align: center;
     }
-    /*
     .col.career {
         width: 30%;
     }
-   */
     .col.expertise {
         width: 50%;
+        padding-right: 3em;
     }
 }
 
@@ -436,15 +438,19 @@ h2 {
 #whatsapp,
 #whatsapp a { color: #030; }
 
-#whatsapp img { margin: 2em }
-
 /* Spacer at end. */
-#spacer {
+#spacer, #spacer-top {
     font-size: 2em;
+    color: #ccc;
+    text-align: center;
+}
+#spacer {
     margin-top: 23em;
     margin-bottom: 2em;
-    text-align: center;
-    color: #ccc;
+}
+#spacer-top::before,
+#spacer::after {
+    content: "❦"
 }
 
     </style>
@@ -488,7 +494,7 @@ h2 {
     <div class="container">
       <div class="row">
         <div class="col">
-          <h2>About me</h2>
+          <h2>About me?</h2>
         </div>
         <div class="col expertise">
           <p>Expertise:</p>
@@ -496,7 +502,6 @@ h2 {
           <p class="indent">Integrating technology into healthcare, with expertise in allied health and musculoskeletal care.</p>
           <p class="indent">Qualitative research.</p>
         </div>
-      </div>
         <div class="col career">
           <p>Career history:</p>
           <ul>
@@ -510,6 +515,8 @@ h2 {
             <li>Health-tec consultant</li>
           </ul>
         </div>
+      </div><!-- row -->
+
       <a class="target" name="contact"></a>
 
       <div class="row">
@@ -542,14 +549,14 @@ h2 {
           <div id="signal">Signal</div>
           <div id="telegram">Telegram</div>
           <div id="whatsapp">
-            <a href="https://whatsapp.com/channel/0029Vb3TK8aFcow0VQiQNf0t">https://whatsapp.com/channel/0029Vb3TK8aFcow0VQiQNf0t<br><img src="whatsapp.png"></a>
+            <a href="https://whatsapp.com/channel/0029Vb3TK8aFcow0VQiQNf0t">https://whatsapp.com/channel/0029Vb3TK8aFcow0VQiQNf0t<br><img src="whatsapp.png" alt="https://whatsapp.com/channel/0029Vb3TK8aFcow0VQiQNf0t"></a>
           </div>
         </div>
       </div><!-- row -->
 
     </div>
 
-    <div id="spacer">&#10086;</div>
-
+    <div id="spacer-top"></div>
+    <div id="spacer"></div>
   </body>
 </html>
