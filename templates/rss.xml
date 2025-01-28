@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>$title$</title>
     <description>$description$</description>
     <link>https://austinplunkett.com/</link>
-    <!-- atom:link href="https://austinplunkett.com/rss.xml" rel="self" type="application/rss+xml" / -->
+    <atom:link href="https://austinplunkett.com/$$FILENAME" rel="self" type="application/rss+xml" />
     <lastBuildDate>$updated$</lastBuildDate>
 
     $for(references)$
     <item>
       <title>$references.title$</title>
       <description>$references.abstract$</description>
-      <link>$references.url$</link>
+      <link>https://$domain$$references.path$</link>
       <pubDate>$references.issued$</pubDate>
-      <!-- guid>$references.url$@$references.issued$</guid -->
+      <guid>https://$domain$$references.path$?date=$references.YMD$</guid>
     </item>
     $endfor$
   </channel>

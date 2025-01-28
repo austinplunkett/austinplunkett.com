@@ -1,8 +1,12 @@
-title: austinplunkett.com
+title: Austin Plunkett
 description: Health. Technology. Consultancy services.
+domain: austinplunkett.com
+updated: Tue, 28 Jan 2025 10:24:02 GMT
 references:
 - title: UK's plans for AI-driven healthcare need to consider long term impact
-  issued: 2025-01-28
-  updated: 2025-01-28
-  url: https://austinplunkett.com/ai-nhs-long-term-impact/
+  issuedYMD: 2025-01-28
+  issued: Tue, 28 Jan 2025 10:24:02 GMT
+  updatedYMDD: 2025-01-28
+  updated: Tue, 28 Jan 2025 10:24:02 GMT
+  path: /ai-nhs-long-term-impact/
   abstract: The UK Government must explain how it will handle the societal, ecological, educational, and industrial implications of its plans to roll-out AI.
