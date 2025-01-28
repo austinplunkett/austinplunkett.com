@@ -1,0 +1,13 @@
+*
+
+!.gitignore
+
+!CNAME
+!favicon.*
+!*.html
+!*.css
+!*.js
+!*.png
+!*.xml
+
+!*/
