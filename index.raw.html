@@ -341,22 +341,6 @@ h1, ol, ul, li {
 }
 
 /* ================================================================================ */
-/* Light/dark themes. */
-@media (prefers-color-scheme: dark) {
-    body {
-        background: black;
-        color: #db9;
-    }
-    .col.nav a {
-        color: black;
-        background: #db9;
-    }
-    .col.nav a:hover {
-        background: #c00;
-    }
-}
-
-/* ================================================================================ */
 /* Misc */
 
 h1 {
@@ -416,12 +400,11 @@ h2 {
 /* Contact/QR stuff. */
 
 #signal img, #telegram img, #whatsapp img {
-    visibility: hidden;
-    display: none;
+    max-width: 100%;
 }
 
 @media only screen and (min-width: 40em) {
-    .col.disney {
+    .col.contact {
         width: 20%;
         text-align: left;
     }
@@ -458,12 +441,6 @@ h2 {
     line-height: 1.3;
 }
 
-#telegram,
-#whatsapp {
-    visibility: hidden;
-    display: none;
-}
-
 #signal,
 #signal a,
 #telegram,
@@ -477,7 +454,6 @@ h2 {
 #spacer {
     margin-bottom: 4em;
 }
-
 @media only screen and (min-width: 40em) {
     #spacer, #spacer-top {
         font-size: 2em;
@@ -497,6 +473,41 @@ h2 {
     #spacer::after {
         content: "❦"
     }
+}
+
+
+/* ================================================================================ */
+/* Light/dark themes. */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: black;
+        color: #db9;
+    }
+    .row.hero {
+        border-bottom: 1px solid #db9;
+    }
+    #spacer-top {
+        border-top: 1px solid #db9;
+    }
+    .col.nav a {
+        color: black;
+        background: #db9;
+    }
+    .col.nav a:hover {
+        background: #c00;
+     }
+	 #signal, #signal a, #telegram, #telegram a {
+		 color: #09c !important;
+	 }
+	 #whatsapp, #whatsapp a {
+		 color: #6a6 !important;
+	 }
+	 #whatsapp img {
+		 filter: invert() sepia(1) saturate(10) brightness(65%) hue-rotate(40deg);
+	 }
+	 #signal img, #telegram img {
+		 filter: invert() sepia(1) saturate(10) brightness(50%) hue-rotate(120deg);
+	 }
 }
 
     </style>
@@ -566,36 +577,20 @@ h2 {
       <a class="target" name="contact"></a>
 
       <div class="row">
-        <div class="col">
+        <div class="col contact">
           <h2>Contact me</h2>
-        </div>
-        <div class="col disney">
-          <script>
-            const disney = function(e) {
-                document.getElementById("signal").style.visibility = "hidden";
-                document.getElementById("signal").style.display = "none";
-                // document.getElementById("telegram").style.visibility = "hidden";
-                // document.getElementById("telegram").style.display = "none";
-                document.getElementById("whatsapp").style.visibility = "hidden";
-                document.getElementById("whatsapp").style.display = "none";
-
-                document.getElementById(e.value).style.visibility = "visible";
-                document.getElementById(e.value).style.display = "inline-block";
-            }
-          </script>
-          <select onchange="disney(this)">
-            <option selected value="signal">Signal (preferred)</option>
-            <!-- option value="telegram">Telegram</option -->
-            <option value="whatsapp">WhatsApp</option>
-          </select>
         </div>
         <div class="col qr">
           <div id="signal">
-            <a href="https://signal.group/#CjQKIOcy3Og0HsvhqZNRvL36HgDwJsf_5QRf5HAy1tRuh5jiEhBAId3uFPJtQrblESNuutbu"><img src="signal.png" alt="https://signal.group/#CjQKIOcy3Og0HsvhqZNRvL36HgDwJsf_5QRf5HAy1tRuh5jiEhBAId3uFPJtQrblESNuutbu"><br>https://signal.group/&ZeroWidthSpace;#CjQKIOcy3Og0HsvhqZNRvL36HgDwJsf_&ZeroWidthSpace;5QRf5HAy1tRuh5jiEhBAId3uFPJtQrblESNuutbu</a>
+            <a href="https://signal.group/#CjQKIOcy3Og0HsvhqZNRvL36HgDwJsf_5QRf5HAy1tRuh5jiEhBAId3uFPJtQrblESNuutbu"><img src="signal.png" alt="https://signal.group/#CjQKIOcy3Og0HsvhqZNRvL36HgDwJsf_5QRf5HAy1tRuh5jiEhBAId3uFPJtQrblESNuutbu"><br>https://signal.group/&ZeroWidthSpace;#CjQKIOcy3Og&ZeroWidthSpace;0HsvhqZNRv&ZeroWidthSpace;L36HgDwJsf_&ZeroWidthSpace;5QRf5HAy1tRu&ZeroWidthSpace;h5jiEhBAId3u&ZeroWidthSpace;FPJtQrblESNuutbu</a>
           </div>
-          <!-- div id="telegram">Telegram</div -->
+		</div>
+        <!-- div class="col qr" -->
+		<!-- div id="telegram">Telegram</div -->
+		<!-- /div -->
+        <div class="col qr">
           <div id="whatsapp">
-            <a href="https://chat.whatsapp.com/EftuCs4AqaF8dQ33EFkIAT"><img src="whatsapp.png" alt="https://chat.whatsapp.com/EftuCs4AqaF8dQ33EFkIAT"><br>https://chat.whatsapp.com/&ZeroWidthSpace;EftuCs4AqaF8dQ33EFkIAT</a>
+            <a href="https://chat.whatsapp.com/EftuCs4AqaF8dQ33EFkIAT"><img src="whatsapp.png" alt="https://chat.whatsapp.com/EftuCs4AqaF8dQ33EFkIAT"><br>https://chat.whatsapp.com/&ZeroWidthSpace;EftuCs4AqaF&ZeroWidthSpace;8dQ33EFkIAT</a>
           </div>
         </div>
       </div><!-- row -->
