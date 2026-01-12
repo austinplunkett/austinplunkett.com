@@ -3,24 +3,15 @@
   <head>
     <link rel="alternate" type="application/rss+xml" href="/feed.xml">
 
+    <!-- Embed Orcid data as JSON-LD, see:
+         https://iphylo.blogspot.com/2020/01/orcid-serves-schemaorg-linked-data-via.html
+         https://pidforum.org/t/schema-org-pids-orcid-ror/797/2
+      -->
+
     <meta charset="UTF-8">
 
     <!-- Disable 300ms delay in Chrome and Firefox -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Automatic polyfills for many features/browsers -->
-    <script>
-      if ((navigator || {}).onLine) {
-          if ((((window || {}).location || {}).href || {}).startsWith("http")) {
-              var p = document.createElement('script');
-              p.src = "//cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0&features=default";
-              p.async = true;
-              p.defer = true;
-              p.setAttribute('crossorigin','anonymous')
-              document.head.appendChild(p);
-          }
-      }
-    </script>
 
     <!-- HTML5shiv: HTML5 elements for older versions of IE -->
     <!-- respond.js: media-queries for older versions of IE -->
@@ -583,8 +574,8 @@ h2 {
             const disney = function(e) {
                 document.getElementById("signal").style.visibility = "hidden";
                 document.getElementById("signal").style.display = "none";
-                document.getElementById("telegram").style.visibility = "hidden";
-                document.getElementById("telegram").style.display = "none";
+                // document.getElementById("telegram").style.visibility = "hidden";
+                // document.getElementById("telegram").style.display = "none";
                 document.getElementById("whatsapp").style.visibility = "hidden";
                 document.getElementById("whatsapp").style.display = "none";
 
@@ -594,17 +585,17 @@ h2 {
           </script>
           <select onchange="disney(this)">
             <option selected value="signal">Signal (preferred)</option>
-            <option value="telegram">Telegram</option>
+            <!-- option value="telegram">Telegram</option -->
             <option value="whatsapp">WhatsApp</option>
           </select>
         </div>
         <div class="col qr">
           <div id="signal">
-            <a href="https://signal.group/#CjQKIOcy3Og0HsvhqZNRvL36HgDwJsf_5QRf5HAy1tRuh5jiEhBAId3uFPJtQrblESNuutbu"><img src="signal.png" alt="https://signal.group/#CjQKIOcy3Og0HsvhqZNRvL36HgDwJsf_5QRf5HAy1tRuh5jiEhBAId3uFPJtQrblESNuutbu"><br>https://signal.group/<br>#CjQKIOcy3Og0HsvhqZNRvL36HgDwJsf_<br>5QRf5HAy1tRuh5jiEhBAId3uFPJtQrblESNuutbu</a>
+            <a href="https://signal.group/#CjQKIOcy3Og0HsvhqZNRvL36HgDwJsf_5QRf5HAy1tRuh5jiEhBAId3uFPJtQrblESNuutbu"><img src="signal.png" alt="https://signal.group/#CjQKIOcy3Og0HsvhqZNRvL36HgDwJsf_5QRf5HAy1tRuh5jiEhBAId3uFPJtQrblESNuutbu"><br>https://signal.group/&ZeroWidthSpace;#CjQKIOcy3Og0HsvhqZNRvL36HgDwJsf_&ZeroWidthSpace;5QRf5HAy1tRuh5jiEhBAId3uFPJtQrblESNuutbu</a>
           </div>
-          <div id="telegram">Telegram</div>
+          <!-- div id="telegram">Telegram</div -->
           <div id="whatsapp">
-            <a href="https://whatsapp.com/channel/0029Vb3TK8aFcow0VQiQNf0t"><img src="whatsapp.png" alt="https://whatsapp.com/channel/0029Vb3TK8aFcow0VQiQNf0t"><br>https://whatsapp.com/channel/0029Vb3TK8aFcow0VQiQNf0t</a>
+            <a href="https://chat.whatsapp.com/EftuCs4AqaF8dQ33EFkIAT"><img src="whatsapp.png" alt="https://chat.whatsapp.com/EftuCs4AqaF8dQ33EFkIAT"><br>https://chat.whatsapp.com/&ZeroWidthSpace;EftuCs4AqaF8dQ33EFkIAT</a>
           </div>
         </div>
       </div><!-- row -->
@@ -613,5 +604,19 @@ h2 {
 
     <div id="spacer-top"></div>
     <div id="spacer"></div>
+    <!-- Automatic polyfills for many features/browsers -->
+    <script async>
+      if ((navigator || {}).onLine) {
+          if ((((window || {}).location || {}).href || {}).startsWith("http")) {
+              var p = document.createElement('script');
+              p.src = "//cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0&features=default";
+              p.async = true;
+              p.defer = true;
+              p.setAttribute('crossorigin','anonymous')
+              document.head.appendChild(p);
+          }
+      }
+    </script>
+
   </body>
 </html>
